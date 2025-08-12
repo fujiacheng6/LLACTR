@@ -1,0 +1,251 @@
+gift:
+    data_format: csv
+    data_root: ../data/gift/
+    feature_cols:
+    - {active: true, dtype: str, name: parent_asin, type: categorical} 
+    - {active: true, dtype: str, name: user_id, type: categorical}      
+    - {active: true, dtype: str, name: timestamp, type: categorical}
+    - {active: true, dtype: str, name: main_category, type: categorical}
+    - {active: true, dtype: str, name: title, type: categorical}
+    - {active: true, dtype: str, name: average_rating, type: categorical}
+    - {active: true, dtype: str, name: rating_number, type: categorical}
+    - {active: true, dtype: str, name: features, type: categorical}
+    - {active: true, dtype: str, name: description, type: categorical}
+    - {active: true, dtype: str, name: price, type: categorical}
+    - {active: true, dtype: str, name: store, type: categorical}
+    - {active: true, dtype: str, name: categories, type: categorical}
+    - {active: true, dtype: str, name: details, type: categorical}
+    label_col: {dtype: float, name: rating}
+    min_categr_count: 1
+    test_data: ../data/gift/test.csv
+    train_data: ../data/gift/train.csv
+    valid_data: ../data/gift/valid.csv
+box:
+    data_format: csv
+    data_root: ../data/box/
+    feature_cols:
+    - {active: true, dtype: str, name: parent_asin, type: categorical} 
+    - {active: true, dtype: str, name: user_id, type: categorical}      
+    - {active: true, dtype: str, name: timestamp, type: categorical}
+    - {active: true, dtype: str, name: main_category, type: categorical}
+    - {active: true, dtype: str, name: title, type: categorical}
+    - {active: true, dtype: str, name: average_rating, type: categorical}
+    - {active: true, dtype: str, name: rating_number, type: categorical}
+    - {active: true, dtype: str, name: features, type: categorical}
+    - {active: true, dtype: str, name: description, type: categorical}
+    - {active: true, dtype: str, name: price, type: categorical}
+    - {active: true, dtype: str, name: store, type: categorical}
+    - {active: true, dtype: str, name: categories, type: categorical}
+    - {active: true, dtype: str, name: details, type: categorical}
+    label_col: {dtype: float, name: rating}
+    min_categr_count: 1
+    test_data: ../data/box/test.csv
+    train_data: ../data/box/train.csv
+    valid_data: ../data/box/valid.csv
+beauty:
+    data_format: csv
+    data_root: ../data/beauty/
+    feature_cols:
+    - {active: true, dtype: str, name: parent_asin, type: categorical} 
+    - {active: true, dtype: str, name: user_id, type: categorical}      
+    - {active: true, dtype: str, name: timestamp, type: categorical}
+    - {active: true, dtype: str, name: main_category, type: categorical}
+    - {active: true, dtype: str, name: title, type: categorical}
+    - {active: true, dtype: str, name: average_rating, type: categorical}
+    - {active: true, dtype: str, name: rating_number, type: categorical}
+    - {active: true, dtype: str, name: features, type: categorical}
+    - {active: true, dtype: str, name: description, type: categorical}
+    - {active: true, dtype: str, name: price, type: categorical}
+    - {active: true, dtype: str, name: store, type: categorical}
+    - {active: true, dtype: str, name: categories, type: categorical}
+    - {active: true, dtype: str, name: details, type: categorical}
+    label_col: {dtype: float, name: rating}
+    min_categr_count: 1
+    test_data: ../data/beauty/test.csv
+    train_data: ../data/beauty/train.csv
+    valid_data: ../data/beauty/valid.csv
+game:
+    data_format: csv
+    data_root: ../data/game/
+    feature_cols:
+    - {active: true, dtype: str, name: parent_asin, type: categorical} 
+    - {active: true, dtype: str, name: user_id, type: categorical}      
+    - {active: true, dtype: str, name: timestamp, type: categorical}
+    - {active: true, dtype: str, name: main_category, type: categorical}
+    - {active: true, dtype: str, name: title, type: categorical}
+    - {active: true, dtype: str, name: average_rating, type: categorical}
+    - {active: true, dtype: str, name: rating_number, type: categorical}
+    - {active: true, dtype: str, name: features, type: categorical}
+    - {active: true, dtype: str, name: description, type: categorical}
+    - {active: true, dtype: str, name: price, type: categorical}
+    - {active: true, dtype: str, name: store, type: categorical}
+    - {active: true, dtype: str, name: categories, type: categorical}
+    - {active: true, dtype: str, name: details, type: categorical}
+    label_col: {dtype: float, name: rating}
+    min_categr_count: 1
+    test_data: ../data/game/test.csv
+    train_data: ../data/game/train.csv
+    valid_data: ../data/game/valid.csv
+music:
+    data_format: csv
+    data_root: ../data/music/
+    feature_cols:
+    - {active: true, dtype: str, name: parent_asin, type: categorical} 
+    - {active: true, dtype: str, name: user_id, type: categorical}      
+    - {active: true, dtype: str, name: timestamp, type: categorical}
+    - {active: true, dtype: str, name: main_category, type: categorical}
+    - {active: true, dtype: str, name: title, type: categorical}
+    - {active: true, dtype: str, name: average_rating, type: categorical}
+    - {active: true, dtype: str, name: rating_number, type: categorical}
+    - {active: true, dtype: str, name: features, type: categorical}
+    - {active: true, dtype: str, name: description, type: categorical}
+    - {active: true, dtype: str, name: price, type: categorical}
+    - {active: true, dtype: str, name: store, type: categorical}
+    - {active: true, dtype: str, name: categories, type: categorical}
+    - {active: true, dtype: str, name: details, type: categorical}
+    label_col: {dtype: float, name: rating}
+    min_categr_count: 1
+    test_data: ../data/music/test.csv
+    train_data: ../data/music/train.csv
+    valid_data: ../data/music/valid.csv
+health:
+    data_format: csv
+    data_root: ../data/health/
+    feature_cols:
+    - {active: true, dtype: str, name: parent_asin, type: categorical} 
+    - {active: true, dtype: str, name: user_id, type: categorical}      
+    - {active: true, dtype: str, name: timestamp, type: categorical}
+    - {active: true, dtype: str, name: main_category, type: categorical}
+    - {active: true, dtype: str, name: title, type: categorical}
+    - {active: true, dtype: str, name: average_rating, type: categorical}
+    - {active: true, dtype: str, name: rating_number, type: categorical}
+    - {active: true, dtype: str, name: features, type: categorical}
+    - {active: true, dtype: str, name: description, type: categorical}
+    - {active: true, dtype: str, name: price, type: categorical}
+    - {active: true, dtype: str, name: store, type: categorical}
+    - {active: true, dtype: str, name: categories, type: categorical}
+    - {active: true, dtype: str, name: details, type: categorical}
+    label_col: {dtype: float, name: rating}
+    min_categr_count: 1
+    test_data: ../data/health/test.csv
+    train_data: ../data/health/train.csv
+    valid_data: ../data/health/valid.csv
+handmade:
+    data_format: csv
+    data_root: ../data/handmade/
+    feature_cols:
+    - {active: true, dtype: str, name: parent_asin, type: categorical} 
+    - {active: true, dtype: str, name: user_id, type: categorical}      
+    - {active: true, dtype: str, name: timestamp, type: categorical}
+    - {active: true, dtype: str, name: main_category, type: categorical}
+    - {active: true, dtype: str, name: title, type: categorical}
+    - {active: true, dtype: str, name: average_rating, type: categorical}
+    - {active: true, dtype: str, name: rating_number, type: categorical}
+    - {active: true, dtype: str, name: features, type: categorical}
+    - {active: true, dtype: str, name: description, type: categorical}
+    - {active: true, dtype: str, name: price, type: categorical}
+    - {active: true, dtype: str, name: store, type: categorical}
+    - {active: true, dtype: str, name: categories, type: categorical}
+    - {active: true, dtype: str, name: details, type: categorical}
+    label_col: {dtype: float, name: rating}
+    min_categr_count: 1
+    test_data: ../data/handmade/test.csv
+    train_data: ../data/handmade/train.csv
+    valid_data: ../data/handmade/valid.csv
+magazine:
+    data_format: csv
+    data_root: ../data/magazine/
+    feature_cols:
+    - {active: true, dtype: str, name: parent_asin, type: categorical} 
+    - {active: true, dtype: str, name: user_id, type: categorical}      
+    - {active: true, dtype: str, name: timestamp, type: categorical}
+    - {active: true, dtype: str, name: main_category, type: categorical}
+    - {active: true, dtype: str, name: title, type: categorical}
+    - {active: true, dtype: str, name: average_rating, type: categorical}
+    - {active: true, dtype: str, name: rating_number, type: categorical}
+    - {active: true, dtype: str, name: features, type: categorical}
+    - {active: true, dtype: str, name: description, type: categorical}
+    - {active: true, dtype: str, name: price, type: categorical}
+    - {active: true, dtype: str, name: store, type: categorical}
+    - {active: true, dtype: str, name: categories, type: categorical}
+    - {active: true, dtype: str, name: details, type: categorical}
+    label_col: {dtype: float, name: rating}
+    min_categr_count: 1
+    test_data: ../data/magazine/test.csv
+    train_data: ../data/magazine/train.csv
+    valid_data: ../data/magazine/valid.csv
+ml1m:
+    data_format: csv
+    data_root: ../data/ml1m/
+    feature_cols:
+    - {active: true, dtype: str, name: UserID, type: categorical} 
+    - {active: true, dtype: str, name: Gender, type: categorical}      
+    - {active: true, dtype: str, name: Age, type: categorical}
+    - {active: true, dtype: str, name: Occupation, type: categorical}
+    - {active: true, dtype: str, name: MovieID, type: categorical}
+    - {active: true, dtype: str, name: Title, type: categorical}
+    - {active: true, dtype: str, name: Genres, type: categorical}
+    - {active: true, dtype: str, name: Timestamp, type: categorical}
+    label_col: {dtype: float, name: Rating}
+    min_categr_count: 1
+    test_data: ../data/ml1m/test.csv
+    train_data: ../data/ml1m/train.csv
+    valid_data: ../data/ml1m/valid.csv
+bx:
+    data_format: csv
+    data_root: ../data/bx/
+    feature_cols:
+    - {active: true, dtype: str, name: User-ID, type: categorical} 
+    - {active: true, dtype: str, name: Location, type: categorical}      
+    - {active: true, dtype: str, name: Age, type: categorical}
+    - {active: true, dtype: str, name: ISBN, type: categorical}
+    - {active: true, dtype: str, name: Book-Title, type: categorical}
+    - {active: true, dtype: str, name: Book-Author, type: categorical}
+    - {active: true, dtype: str, name: Year-Of-Publication, type: categorical}
+    - {active: true, dtype: str, name: Publisher, type: categorical}
+    label_col: {dtype: float, name: Book-Rating}
+    min_categr_count: 1
+    test_data: ../data/bx/test.csv
+    train_data: ../data/bx/train.csv
+    valid_data: ../data/bx/valid.csv
+goodread:
+    data_format: csv
+    data_root: ../data/goodread/
+    feature_cols:
+    - {active: true, dtype: str, name: user_id, type: categorical} 
+    - {active: true, dtype: str, name: book_id, type: categorical}      
+    # - {active: true, dtype: str, name: review_id, type: categorical}
+    # - {active: true, dtype: str, name: is_read, type: categorical}
+    - {active: true, dtype: str, name: date_added, type: categorical}
+    # - {active: true, dtype: str, name: date_updated, type: categorical}
+    # - {active: true, dtype: str, name: read_at, type: categorical}
+    # - {active: true, dtype: str, name: started_at, type: categorical}
+    # - {active: true, dtype: str, name: isbn, type: categorical}
+    - {active: true, dtype: str, name: text_reviews_count, type: categorical}
+    - {active: true, dtype: str, name: series, type: categorical}
+    - {active: true, dtype: str, name: country_code, type: categorical}
+    - {active: true, dtype: str, name: language_code, type: categorical}
+    # - {active: true, dtype: str, name: popular_shelves, type: categorical}
+    # - {active: true, dtype: str, name: asin, type: categorical}
+    - {active: true, dtype: str, name: is_ebook, type: categorical}
+    - {active: true, dtype: str, name: average_rating, type: categorical}
+    # - {active: true, dtype: str, name: kindle_asin, type: categorical}
+    - {active: true, dtype: str, name: similar_books, type: categorical}
+    - {active: true, dtype: str, name: description, type: categorical}
+    - {active: true, dtype: str, name: format, type: categorical}
+    - {active: true, dtype: str, name: authors, type: categorical}
+    - {active: true, dtype: str, name: publisher, type: categorical} 
+    - {active: true, dtype: str, name: num_pages, type: categorical}
+    - {active: true, dtype: str, name: publication_day, type: categorical}
+    # - {active: true, dtype: str, name: isbn13, type: categorical}
+    - {active: true, dtype: str, name: publication_month, type: categorical}
+    - {active: true, dtype: str, name: edition_information, type: categorical}
+    - {active: true, dtype: str, name: publication_year, type: categorical}
+    - {active: true, dtype: str, name: ratings_count, type: categorical}
+    # - {active: true, dtype: str, name: work_id, type: categorical}
+    - {active: true, dtype: str, name: title, type: categorical}
+    label_col: {dtype: float, name: rating}
+    min_categr_count: 1
+    test_data: ../data/goodread/test.csv
+    train_data: ../data/goodread/train.csv
+    valid_data: ../data/goodread/valid.csv

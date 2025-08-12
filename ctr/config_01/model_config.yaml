@@ -1,0 +1,1882 @@
+# FM
+FM_ml1m:
+    batch_size: 4096
+    dataset_id: ml1m
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/ml1m/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FM_magazine:
+    batch_size: 4096
+    dataset_id: magazine
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/magazine/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FM_music:
+    batch_size: 4096
+    dataset_id: music
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/music/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FM_beauty:
+    batch_size: 4096
+    dataset_id: beauty
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/beauty/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FM_game:
+    batch_size: 4096
+    dataset_id: game
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/game/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FM_fashion:
+    batch_size: 4096
+    dataset_id: fashion
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/fashion/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FM_gift:
+    batch_size: 4096
+    dataset_id: gift
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/gift/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FM_health:
+    batch_size: 4096
+    dataset_id: health
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/health/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FM_handmade:
+    batch_size: 4096
+    dataset_id: handmade
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/handmade/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1 
+FM_appliances:
+    batch_size: 4096
+    dataset_id: appliances
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/appliances/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FM_cd:
+    batch_size: 4096
+    dataset_id: cd
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FM
+    model_id: FM_base
+    model_root: ./checkpoint/cd/FM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1  
+# DeepFM
+DeepFM_ml1m:
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: ml1m
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/ml1m/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+DeepFM_gift:
+    batch_norm: false
+    batch_size: 4096  # 4096 256
+    dataset_id: gift
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/gift/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+DeepFM_box:
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: box
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/box/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1    
+DeepFM_beauty:
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: beauty
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/beauty/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+DeepFM_game:
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: game
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/game/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+DeepFM_music:
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: music
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/music/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+DeepFM_health:
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: health
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/health/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+DeepFM_handmade:
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: handmade
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/handmade/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+DeepFM_magazine:
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: magazine
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/magazine/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+DeepFM_appliances:
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: appliances
+    debug: false
+    embedding_dim: 32
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    hidden_activations: relu
+    hidden_units: [300, 300, 128]
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DeepFM
+    model_id: DeepFM_base
+    model_root: ./checkpoint/appliances/DeepFM/
+    monitor: AUC
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+# FwFM
+FwFM_ml1m:
+    batch_size: 4096
+    data_block_size: -1
+    dataset_id: ml1m
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    linear_type: FiLV
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FwFM
+    model_id: FwFM_base
+    model_root: ./checkpoint/ml1m/FwFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FwFM_magazine:
+    batch_size: 4096
+    data_block_size: -1
+    dataset_id: magazine
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    linear_type: FiLV
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FwFM
+    model_id: FwFM_base
+    model_root: ./checkpoint/magazine/FwFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FwFM_music:
+    batch_size: 4096
+    data_block_size: -1
+    dataset_id: music
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    linear_type: FiLV
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FwFM
+    model_id: FwFM_base
+    model_root: ./checkpoint/music/FwFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FwFM_gift:
+    batch_size: 4096
+    data_block_size: -1
+    dataset_id: gift
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    linear_type: FiLV
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FwFM
+    model_id: FwFM_base
+    model_root: ./checkpoint/gift/FwFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FwFM_beauty:
+    batch_size: 4096
+    data_block_size: -1
+    dataset_id: beauty
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    linear_type: FiLV
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FwFM
+    model_id: FwFM_base
+    model_root: ./checkpoint/beauty/FwFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FwFM_game:
+    batch_size: 4096
+    data_block_size: -1
+    dataset_id: game
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    linear_type: FiLV
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FwFM
+    model_id: FwFM_base
+    model_root: ./checkpoint/game/FwFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FwFM_appliances:
+    batch_size: 4096
+    data_block_size: -1
+    dataset_id: appliances
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    linear_type: FiLV
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FwFM
+    model_id: FwFM_base
+    model_root: ./checkpoint/appliances/FwFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+# FmFM
+FmFM_ml1m:
+    batch_size: 4096
+    dataset_id: ml1m
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    field_interaction_type: matrixed
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FmFM
+    model_id: FmFM_base
+    model_root: ./checkpoint/ml1m/FmFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    partition_block_size: -1
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FmFM_magazine:
+    batch_size: 4096
+    dataset_id: magazine
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    field_interaction_type: matrixed
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FmFM
+    model_id: FmFM_base
+    model_root: ./checkpoint/magazine/FmFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    partition_block_size: -1
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FmFM_music:
+    batch_size: 4096
+    dataset_id: music
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    field_interaction_type: matrixed
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FmFM
+    model_id: FmFM_base
+    model_root: ./checkpoint/music/FmFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    partition_block_size: -1
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FvFM_gift:
+    batch_size: 4096
+    dataset_id: gift
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    field_interaction_type: vectorized
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FmFM
+    model_id: FmFM_base
+    model_root: ./checkpoint/gift/FvFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    partition_block_size: -1
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FmFM_gift:
+    batch_size: 4096
+    dataset_id: gift
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    field_interaction_type: matrixed
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FmFM
+    model_id: FmFM_base
+    model_root: ./checkpoint/gift/FmFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    partition_block_size: -1
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FmFM_beauty:
+    batch_size: 4096
+    dataset_id: beauty
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    field_interaction_type: matrixed
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FmFM
+    model_id: FmFM_base
+    model_root: ./checkpoint/beauty/FmFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    partition_block_size: -1
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FmFM_game:
+    batch_size: 4096
+    dataset_id: game
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    field_interaction_type: matrixed
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FmFM
+    model_id: FmFM_base
+    model_root: ./checkpoint/game/FmFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    partition_block_size: -1
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+FmFM_appliances:
+    batch_size: 4096
+    dataset_id: appliances
+    debug: false
+    embedding_dim: 32
+    epochs: 100
+    every_x_epochs: 1
+    field_interaction_type: matrixed
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: FmFM
+    model_id: FmFM_base
+    model_root: ./checkpoint/appliances/FmFM/
+    monitor: AUC
+    monitor_mode: max
+    num_workers: 3
+    optimizer: adam
+    partition_block_size: -1
+    patience: 2
+    pickle_feature_encoder: true
+    regularizer: 0
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1    
+# DCN
+DCN_gift:
+    batch_norm: false
+    batch_size: 4096
+    crossing_layers: 3
+    dataset_id: gift
+    debug: false
+    dnn_activations: relu
+    dnn_hidden_units: [300, 300, 128]
+    embedding_dim: 32
+    embedding_dropout: 0
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: DCN
+    model_id: DCN_base
+    model_root: ./checkpoint/gift/DCN/
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    verbose: 1
+    workers: 3
+# AutoInt
+AutoInt_beauty:
+    attention_dim: 32
+    attention_layers: 2
+    batch_norm: false
+    batch_size: 4096
+    dataset_id: beauty
+    debug: false
+    dnn_activations: relu
+    dnn_hidden_units: []
+    embedding_dim: 32
+    embedding_dropout: 0
+    embedding_regularizer: 0
+    epochs: 100
+    every_x_epochs: 1
+    layer_norm: false
+    learning_rate: 0.001
+    loss: binary_crossentropy
+    metrics: [logloss, AUC]
+    model: AutoInt
+    model_id: AutoInt_base
+    model_root: ./checkpoint/beauty/AutoInt/
+    monitor: {AUC: 1, logloss: -1}
+    monitor_mode: max
+    net_dropout: 0
+    net_regularizer: 0
+    num_heads: 1
+    optimizer: adam
+    patience: 2
+    pickle_feature_encoder: true
+    save_best_only: true
+    seed: 2024
+    shuffle: true
+    task: binary_classification
+    use_hdf5: true
+    use_residual: true
+    use_scale: false
+    use_wide: true
+    verbose: 1
+    workers: 3
+# DCNv2
+DCNv2_ml1m:
+    model: DCNv2
+    dataset_id: ml1m
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    model_structure: parallel
+    use_low_rank_mixture: False
+    low_rank: 32
+    num_experts: 4
+    learning_rate: 0.001
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    stacked_dnn_hidden_units: [500, 300, 300, 128]
+    parallel_dnn_hidden_units: [500, 300, 300, 128]
+    dnn_activations: relu
+    num_cross_layers: 4
+    net_dropout: 0
+    batch_norm: False
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    model_root: ./checkpoint/ml1m/DCNv2/
+    num_workers: 3
+    verbose: 1
+    patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    debug_mode: False  
+DCNv2_gift:
+    model: DCNv2
+    dataset_id: gift
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    model_structure: parallel
+    use_low_rank_mixture: False
+    low_rank: 32
+    num_experts: 4
+    learning_rate: 0.001
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    stacked_dnn_hidden_units: [500, 300, 300, 128]
+    parallel_dnn_hidden_units: [500, 300, 300, 128]
+    dnn_activations: relu
+    num_cross_layers: 4
+    net_dropout: 0
+    batch_norm: False
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    model_root: ./checkpoint/gift/DCNv2/
+    num_workers: 3
+    verbose: 1
+    patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    debug_mode: False  
+DCNv2_music:
+    model: DCNv2
+    dataset_id: music
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    model_structure: parallel
+    use_low_rank_mixture: False
+    low_rank: 32
+    num_experts: 4
+    learning_rate: 0.001
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    stacked_dnn_hidden_units: [500, 300, 300, 128]
+    parallel_dnn_hidden_units: [500, 300, 300, 128] # 500, 300, 300, 128
+    dnn_activations: relu
+    num_cross_layers: 4
+    net_dropout: 0
+    batch_norm: False
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    model_root: ./checkpoint/music/DCNv2/
+    num_workers: 3
+    verbose: 1
+    patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    debug_mode: False  
+DCNv2_magazine:
+    model: DCNv2
+    dataset_id: magazine
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    model_structure: parallel
+    use_low_rank_mixture: False
+    low_rank: 32
+    num_experts: 4
+    learning_rate: 0.001
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    stacked_dnn_hidden_units: [500, 300, 300, 128]
+    parallel_dnn_hidden_units: [500, 300, 300, 128]
+    dnn_activations: relu
+    num_cross_layers: 4
+    net_dropout: 0
+    batch_norm: False
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    model_root: ./checkpoint/magazine/DCNv2/
+    num_workers: 3
+    verbose: 1
+    patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    debug_mode: False  
+DCNv2_game:
+    model: DCNv2
+    dataset_id: game
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    model_structure: parallel
+    use_low_rank_mixture: False
+    low_rank: 32
+    num_experts: 4
+    learning_rate: 0.001
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    stacked_dnn_hidden_units: [500, 300, 300, 128]
+    parallel_dnn_hidden_units: [500, 300, 300, 128]
+    dnn_activations: relu
+    num_cross_layers: 4
+    net_dropout: 0
+    batch_norm: False
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: 'AUC'
+    monitor_mode: 'max'
+    model_root: ./checkpoint/game/DCNv2/
+    num_workers: 3
+    verbose: 1
+    patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    debug_mode: False  
+# FinalMLP
+FinalMLP_ml1m:
+    model: FinalMLP
+    dataset_id: ml1m
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    mlp1_hidden_units: [400, 400]
+    mlp1_hidden_activations: relu
+    mlp1_dropout: 0.5
+    mlp1_batch_norm: False
+    mlp2_hidden_units: [400, 400, 400]
+    mlp2_hidden_activations: relu
+    mlp2_dropout: 0.5
+    mlp2_batch_norm: False
+    use_fs: True
+    fs_hidden_units: [1024, 512]
+    fs1_context: []
+    fs2_context: []
+    num_heads: 2
+    batch_size: 4096
+    embedding_dim: 32
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/ml1m/FinalMLP/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null 
+FinalMLP_gift:
+    model: FinalMLP
+    dataset_id: gift
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    mlp1_hidden_units: [500, 500]
+    mlp1_hidden_activations: relu
+    mlp1_batch_norm: False
+    mlp2_hidden_units: [500, 500, 500]
+    mlp2_hidden_activations: relu
+    mlp2_batch_norm: False
+    use_fs: True
+    fs_hidden_units: [1024, 512]
+    fs1_context: []
+    fs2_context: []
+    num_heads: 2
+    batch_size: 4096
+    embedding_dim: 32
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/gift/FinalMLP/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null    
+FinalMLP_game:
+    model: FinalMLP
+    dataset_id: game
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    mlp1_hidden_units: [400, 400]
+    mlp1_hidden_activations: relu
+    mlp1_batch_norm: False
+    mlp2_hidden_units: [400, 400]
+    mlp2_hidden_activations: relu
+    mlp2_batch_norm: False
+    use_fs: True
+    fs_hidden_units: [400, 400]
+    fs1_context: []
+    fs2_context: []
+    num_heads: 2
+    batch_size: 4096
+    embedding_dim: 32
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/game/FinalMLP/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null    
+FinalMLP_music:
+    model: FinalMLP
+    dataset_id: music
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    mlp1_hidden_units: [500, 500]
+    mlp1_hidden_activations: relu
+    mlp1_batch_norm: False
+    mlp2_hidden_units: [500, 500, 500]
+    mlp2_hidden_activations: relu
+    mlp2_batch_norm: False
+    use_fs: True
+    fs_hidden_units: [1024, 512]
+    fs1_context: []
+    fs2_context: []
+    num_heads: 2
+    batch_size: 4096
+    embedding_dim: 32
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/music/FinalMLP/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null  
+FinalMLP_magazine:
+    model: FinalMLP
+    dataset_id: magazine
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    mlp1_hidden_units: [400, 400]
+    mlp1_hidden_activations: relu
+    mlp1_batch_norm: False
+    mlp2_hidden_units: [400, 400]
+    mlp2_hidden_activations: relu
+    mlp2_batch_norm: False
+    use_fs: True
+    fs_hidden_units: [400, 400]
+    fs1_context: []
+    fs2_context: []
+    num_heads: 2
+    batch_size: 4096
+    embedding_dim: 32
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/magazine/FinalMLP/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null 
+# FinalNet
+FinalNet_ml1m:
+    model: FinalNet
+    dataset_id: ml1m
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    block_type: "2B"
+    batch_norm: True
+    use_feature_gating: True
+    block1_hidden_units: [400, 400]
+    block1_hidden_activations: null
+    block1_dropout: 0.6
+    block2_hidden_units: [400, 400]
+    block2_hidden_activations: null
+    block2_dropout: 0.6
+    residual_type: concat
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/ml1m/FinalNet/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    ordered_features: null
+    feature_specs: null    
+FinalNet_gift:
+    model: FinalNet
+    dataset_id: gift
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    block_type: "2B"
+    batch_norm: True
+    use_feature_gating: True
+    block1_hidden_units: [400, 400, 400]
+    block1_hidden_activations: null
+    block1_dropout: 0.6
+    block2_hidden_units: [400, 400, 400]
+    block2_hidden_activations: null
+    block2_dropout: 0.6
+    residual_type: concat
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/gift/FinalNet/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    ordered_features: null
+    feature_specs: null    
+FinalNet_game:
+    model: FinalNet
+    dataset_id: game
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    block_type: "2B"
+    batch_norm: True
+    use_feature_gating: True
+    block1_hidden_units: [400, 400, 400]
+    block1_hidden_activations: null
+    block1_dropout: 0
+    block2_hidden_units: [400, 400, 400]
+    block2_hidden_activations: null
+    block2_dropout: 0
+    residual_type: concat
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/game/FinalNet/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    ordered_features: null
+    feature_specs: null 
+FinalNet_music:
+    model: FinalNet
+    dataset_id: music
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    block_type: "2B"
+    batch_norm: True
+    use_feature_gating: True
+    block1_hidden_units: [400, 400, 400]
+    block1_hidden_activations: null
+    block1_dropout: 0.3
+    block2_hidden_units: [400, 400, 400]
+    block2_hidden_activations: null
+    block2_dropout: 0.3
+    residual_type: concat
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/music/FinalNet/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    ordered_features: null
+    feature_specs: null 
+FinalNet_magazine:
+    model: FinalNet
+    dataset_id: magazine
+    loss: binary_crossentropy
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    block_type: "2B"
+    batch_norm: True
+    use_feature_gating: True
+    block1_hidden_units: [400, 400, 400]
+    block1_hidden_activations: null
+    block1_dropout: 0.3
+    block2_hidden_units: [400, 400, 400]
+    block2_hidden_activations: null
+    block2_dropout: 0.3
+    residual_type: concat
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/magazine/FinalNet/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    ordered_features: null
+    feature_specs: null 
+# WuKong
+WuKong_gift: # This is a config template
+    model: WuKong
+    dataset_id: gift
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.0e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    num_layers: 8
+    compression_dim: 32
+    fmb_units: [200,200] # [128,128,128]
+    fmb_dim: 32
+    project_dim: 8
+    dropout_rate: 0.3
+    hidden_activations: relu
+    mlp_hidden_units: [32,32] # [64]
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/gift/WuKong/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null
+WuKong_music: # This is a config template
+    model: WuKong
+    dataset_id: music
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.0e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    num_layers: 8
+    compression_dim: 32
+    fmb_units: [200,200] # [128,128,128]
+    fmb_dim: 32
+    project_dim: 8
+    dropout_rate: 0.3
+    hidden_activations: relu
+    mlp_hidden_units: [32,32] # [64]
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/music/WuKong/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null
+WuKong_magazine: # This is a config template
+    model: WuKong
+    dataset_id: magazine
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.0e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    num_layers: 4
+    compression_dim: 24
+    fmb_units: [128,128,128]  # [128,128,128] 
+    fmb_dim: 24
+    project_dim: 24
+    dropout_rate: 0
+    hidden_activations: relu
+    mlp_hidden_units: [64] # [64]
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/magazine/WuKong/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null
+# WuKong_magazine: # This is a config template
+#     model: WuKong
+#     dataset_id: magazine
+#     loss: 'binary_crossentropy'
+#     metrics: ['logloss', 'AUC']
+#     task: binary_classification
+#     optimizer: adam
+#     learning_rate: 1.0e-3
+#     embedding_regularizer: 0
+#     net_regularizer: 0
+#     batch_size: 4096
+#     embedding_dim: 32
+#     num_layers: 8
+#     compression_dim: 24
+#     fmb_units: [200,200] 
+#     fmb_dim: 8
+#     project_dim: 24
+#     dropout_rate: 0.5
+#     hidden_activations: relu
+#     mlp_hidden_units: [32,32] # [64]
+#     epochs: 100
+#     shuffle: True
+#     seed: 2024
+#     monitor: {'AUC': 1, 'logloss': -1}
+#     monitor_mode: 'max'
+#     model_root: './checkpoint/magazine/WuKong/'
+#     num_workers: 3
+#     verbose: 1
+#     early_stop_patience: 2
+#     pickle_feature_encoder: True
+#     save_best_only: True
+#     eval_steps: null
+#     debug_mode: False
+#     group_id: null
+#     use_features: null
+#     feature_specs: null
+#     feature_config: null
+WuKong_ml1m: # This is a config template
+    model: WuKong
+    dataset_id: ml1m
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.0e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    num_layers: 8
+    compression_dim: 24
+    fmb_units: [200, 200]  # [128,128,128] 
+    fmb_dim: 24
+    project_dim: 8
+    dropout_rate: 0.5
+    hidden_activations: relu
+    mlp_hidden_units: [32, 32] # [64]
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/ml1m/WuKong/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null
+WuKong_game: # This is a config template
+    model: WuKong
+    dataset_id: game
+    loss: 'binary_crossentropy'
+    metrics: ['logloss', 'AUC']
+    task: binary_classification
+    optimizer: adam
+    learning_rate: 1.0e-3
+    embedding_regularizer: 0
+    net_regularizer: 0
+    batch_size: 4096
+    embedding_dim: 32
+    num_layers: 4
+    compression_dim: 24
+    fmb_units: [200,200]  # [128,128,128] 
+    fmb_dim: 24
+    project_dim: 24
+    dropout_rate: 0.1
+    hidden_activations: relu
+    mlp_hidden_units: [32,32] # [64]
+    epochs: 100
+    shuffle: True
+    seed: 2024
+    monitor: {'AUC': 1, 'logloss': -1}
+    monitor_mode: 'max'
+    model_root: './checkpoint/game/WuKong/'
+    num_workers: 3
+    verbose: 1
+    early_stop_patience: 2
+    pickle_feature_encoder: True
+    save_best_only: True
+    eval_steps: null
+    debug_mode: False
+    group_id: null
+    use_features: null
+    feature_specs: null
+    feature_config: null

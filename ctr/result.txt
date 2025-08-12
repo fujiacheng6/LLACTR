@@ -1,0 +1,38 @@
+#########################################################
+gift
+#########################################################
+python run_expid.py --config ./config_01 --expid FM_gift --adding_mode 0 --weight_decay 0.01  --nlp_field 13 --gpu 1
+logloss: 0.460648 - AUC: 0.662114
+
+python run_expid.py --config ./config_01 --expid FM_gift --adding_mode 1 --nlp_field 13  --llm_emb_path2 "../llm/llm_emb/gift/sl_1000/field_sl_eos_epoch1.pt" --lambda_loss 0.5 --lambda_llm 0.01 --weight_decay 0.01 --gpu 1
+logloss: 0.450084 - AUC: 0.667302
+
+python run_expid.py --config ./config_01 --expid DeepFM_gift --adding_mode 0 --weight_decay 0.01  --nlp_field 13 --gpu 1
+logloss: 0.475034 - AUC: 0.671297
+
+python run_expid.py --config ./config_01 --expid DeepFM_gift --adding_mode 1 --nlp_field 13  --llm_emb_path2 "../llm/llm_emb/gift/sl_1000/field_sl_eos_epoch1.pt" --lambda_loss 0.05 --lambda_llm 0.5 --weight_decay 0.01 --gpu 1
+logloss: 0.465663 - AUC: 0.679699
+
+python run_expid.py --config ./config_01 --expid FwFM_gift --adding_mode 0 --weight_decay 0.001  --nlp_field 13 --gpu 1
+logloss: 0.466391 - AUC: 0.669056
+
+python run_expid.py --config ./config_01 --expid FwFM_gift --adding_mode 1 --nlp_field 13  --llm_emb_path2 "../llm/llm_emb/gift/sl_1000/field_sl_eos_epoch1.pt" --lambda_loss 0.05 --lambda_llm 0.1 --weight_decay 0.001 --gpu 1
+logloss: 0.465853 - AUC: 0.671772
+
+python run_expid.py --config ./config_01 --expid FmFM_gift --adding_mode 0 --weight_decay 0.01  --nlp_field 13 --gpu 1
+logloss: 0.457855 - AUC: 0.674720
+
+python run_expid.py --config ./config_01 --expid FmFM_gift --adding_mode 1 --nlp_field 13  --llm_emb_path2 "../llm/llm_emb/gift/sl_1000/field_sl_eos_epoch3.pt" --lambda_loss 0.01 --lambda_llm 0.1 --weight_decay 0.01 --gpu 1
+logloss: 0.456077 - AUC: 0.676083
+
+python run_expid.py --config ./config_01 --expid FinalMLP_gift --adding_mode 0 --weight_decay 0.01  --nlp_field 13 --gpu 1
+logloss: 0.477398 - AUC: 0.672009
+
+python run_expid.py --config ./config_01 --expid FinalMLP_gift --adding_mode 1 --nlp_field 13  --llm_emb_path2 "../llm/llm_emb/gift/sl_1000/field_sl_eos_epoch1.pt" --lambda_loss 0.1 --lambda_llm 0.1 --weight_decay 0.01 --gpu 1
+logloss: 0.471735 - AUC: 0.681830
+
+python run_expid.py --config ./config_01 --expid WuKong_gift --adding_mode 0 --weight_decay 0.01  --nlp_field 13 --gpu 1
+logloss: 0.475503 - AUC: 0.672792
+
+python run_expid.py --config ./config_01 --expid WuKong_gift --adding_mode 1 --nlp_field 13  --llm_emb_path2 "../llm/llm_emb/gift/sl_1000/field_sl_eos_3.pt" --lambda_loss 0.1 --lambda_llm 0.5 --weight_decay 0.01 --gpu 1
+logloss: 0.474518 - AUC: 0.680005

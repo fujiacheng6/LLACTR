@@ -1,0 +1,99 @@
+{
+    "dataset_id": "gift",
+    "num_fields": 13,
+    "num_features": 231632,
+    "feature_len": 13,
+    "feature_specs": {
+        "parent_asin": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 1049,
+            "index": 0
+        },
+        "user_id": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 106281,
+            "index": 1
+        },
+        "timestamp": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 120771,
+            "index": 2
+        },
+        "main_category": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 13,
+            "index": 3
+        },
+        "title": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 774,
+            "index": 4
+        },
+        "average_rating": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 31,
+            "index": 5
+        },
+        "rating_number": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 507,
+            "index": 6
+        },
+        "features": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 502,
+            "index": 7
+        },
+        "description": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 379,
+            "index": 8
+        },
+        "price": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 26,
+            "index": 9
+        },
+        "store": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 391,
+            "index": 10
+        },
+        "categories": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 42,
+            "index": 11
+        },
+        "details": {
+            "source": "",
+            "type": "categorical",
+            "min_categr_count": 1,
+            "vocab_size": 866,
+            "index": 12
+        }
+    }
+}

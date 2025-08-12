@@ -1,0 +1,37 @@
+# nnictl create --config config_FM_gift_llm.yml -p 18120
+# nnictl stop --all
+
+searchSpace:
+   weight_decay:
+      _type: choice
+      _value: [0, 0.000001, 0.00001, 0.0001, 0.001, 0.01]
+   llm_emb_path2:
+      _type: choice
+      _value: [
+         "../llm/llm_emb/gift/sl_1000/field_sl_eos_epoch1.pt",
+         "../llm/llm_emb/gift/sl_1000/field_sl_eos_epoch2.pt",
+         "../llm/llm_emb/gift/sl_1000/field_sl_eos_epoch3.pt",
+      ]
+   lambda_loss:
+      _type: choice
+      _value: [0.01, 0.05, 0.1, 0.3, 0.5, 0.7]
+   temperature:
+      _type: choice
+      _value: [1]
+   lambda_llm: 
+      _type: choice
+      _value: [0.01, 0.05, 0.1, 0.3, 0.5, 0.7]
+trialCommand: python run_expid.py --config ./config_01 --expid FM_gift --adding_mode 1 --nlp_field 13 --use_nni 1
+
+trainingService:                    # Configure the training platform
+   platform: local
+   useActiveGpu: True
+   gpuIndices: "0,1,2,3,4,5,6,7"
+   maxTrialNumberPerGpu: 1
+trialGpuNumber: 1
+trialConcurrency: 8
+
+tuner:                              
+   name: GridSearch
+
+

@@ -102,7 +102,9 @@ def train(
             quantization_config=bnb_config,
             torch_dtype=torch.bfloat16,
             device_map=device_map,
-            use_cache = False
+            use_cache=False,
+            trust_remote_code=True,
+            low_cpu_mem_usage=True
         )
         model = PeftModel.from_pretrained(model, resume_from_checkpoint, is_trainable=True)
         model.print_trainable_parameters()
@@ -113,7 +115,9 @@ def train(
             quantization_config=bnb_config,
             torch_dtype=torch.bfloat16,
             device_map=device_map,
-            use_cache = False
+            use_cache=False,
+            trust_remote_code=True,
+            low_cpu_mem_usage=True
         )
         model = prepare_model_for_kbit_training(model)
         config = LoraConfig(
@@ -127,9 +131,18 @@ def train(
         model = get_peft_model(model, config)
         model.print_trainable_parameters()
     ############################# load tokenizer ##############################
-    tokenizer = AutoTokenizer.from_pretrained(base_model)
-    tokenizer.add_special_tokens({"pad_token": "<pad>"})
-    model.resize_token_embeddings(len(tokenizer))
+    tokenizer = AutoTokenizer.from_pretrained(base_model, trust_remote_code=True)
+    
+    # 修复TinyLlama的tokenizer问题
+    if tokenizer.pad_token is None:
+        if tokenizer.eos_token is not None:
+            tokenizer.pad_token = tokenizer.eos_token
+        else:
+            tokenizer.add_special_tokens({"pad_token": "<pad>"})
+    
+    # 确保词汇表大小匹配
+    if len(tokenizer) != model.config.vocab_size:
+        model.resize_token_embeddings(len(tokenizer))
 
     # === Dynamically determine the token sequence for the separator
     #     "### Response:" instead of hard‑coding a single id (e.g. 512) ===
@@ -225,167 +238,56 @@ def train(
     model.enable_input_require_grads()
      
 
-    ### ml1m
+    # 注释掉field相关的处理，因为使用标准损失函数不再需要
+    """
+    ### ml1m - 原始字段处理逻辑，现在不需要了
     field_prompt_list = [
-        'UserID',
-        'Gender',
-        'Age',
-        'Occupation',
-        'MovieID',
-        'Title',
-        'Genres',
-        'Timestamp',
+        'UserID', 'Gender', 'Age', 'Occupation',
+        'MovieID', 'Title', 'Genres', 'Timestamp',
     ]
+    # ... field处理代码 ...
+    """
 
-    # map field name (lower‑case) → index for quick lookup
-    field_name_to_idx = {name.lower(): idx for idx, name in enumerate(field_prompt_list)}
-
-
-    input_field = tokenizer(field_prompt_list, return_tensors="pt", padding=True, add_special_tokens=False).to(model.device)
-    
-    input_field_id = input_field.input_ids
-    input_field_attention_mask = input_field.attention_mask
-
-    # DEBUG
-    # tokenizer = AutoTokenizer.from_pretrained('./Llama3_Checkpoints')
-    # tokenizer('### Response:\n', add_special_tokens=False)
-    # tokenizer.decode([14711, 6075, 512])
-
-    field_result = []
-    for i in range(input_field_id.size(0)):
-        field_ids = input_field_id[i]  # (L,)
-        attention_mask = input_field_attention_mask[i]  # (L,)
-        masked_ids = field_ids[attention_mask == 1]
-        field_result.append(masked_ids)
-
+    """
+    # 注释掉复杂的自定义损失函数，使用标准的交叉熵损失
     class MyTrainer(transformers.Trainer):
         def compute_loss(self, model, inputs, return_outputs=False):                     
-            query_input_ids = inputs["input_ids"] # [B, L]
-            query_attention_mask = inputs["attention_mask"]
-            labels_input_ids = inputs["labels"]           
-            model_output = model(input_ids=query_input_ids, attention_mask=query_attention_mask, output_hidden_states=True)
-            last_hidden_states = model_output.hidden_states[-1] # [B, L, D]  
-            # ===== locate the boundary between user‑prompt and answer =====
-            labels = inputs["labels"]                       # [B, L]
-            first_answer_indices = (labels != -100).float().argmax(dim=1)  # [B]
+            # ... 复杂的字段匹配逻辑会导致TinyLlama训练失败 ...
+            # ... 因为TinyLlama的回答格式不符合预期的"字段名:"格式 ...
+    """
 
-            # query embedding = hidden state right before the answer starts
-            batch_idx = torch.arange(first_answer_indices.size(0), device=labels.device)
-            query_emb_eos = last_hidden_states[batch_idx, first_answer_indices - 1, :]  # [B, D]
-            query_emb_eos_norm = query_emb_eos / torch.norm(query_emb_eos, p=2, dim=-1, keepdim=True)
-
-            # extract token ids for the answer field itself
-            batch_answer_field_id = []
-            for i_b in range(query_input_ids.size(0)):
-                answer_ids = query_input_ids[i_b, first_answer_indices[i_b] : ]  # until EOS (already excluded later)
-                batch_answer_field_id.append(answer_ids)
-
-            # get all fields emb
-            outputs_field = model(input_ids=input_field_id, attention_mask=input_field_attention_mask, output_hidden_states=True)
-            field_emb_eos = outputs_field.hidden_states[-1][:, -1, :] # [NUM_FIELD, D]
-            field_emb_eos_norm = field_emb_eos / torch.norm(field_emb_eos, p=2, dim=-1, keepdim=True)
-            
-
-
-            # ids to ignore when extracting the answer field
-            IGNORE_IDS = {
-                tokenizer.pad_token_id,
-                tokenizer.eos_token_id,
-            }
-            if tokenizer.bos_token_id is not None:
-                IGNORE_IDS.add(tokenizer.bos_token_id)
-            # '\n' is usually token id 13 for Llama‑3 tokenizer, but we derive it explicitly
-            NEWLINE_ID = tokenizer.encode("\n", add_special_tokens=False)[0]
-            IGNORE_IDS.add(NEWLINE_ID)
-
-            def _clean(ids: torch.Tensor) -> torch.Tensor:
-                """Remove padding, BOS/EOS, and newline tokens, then strip multiples."""
-                keep_mask = torch.ones_like(ids, dtype=torch.bool)
-                for _id in IGNORE_IDS:
-                    keep_mask &= ids != _id
-                cleaned = ids[keep_mask]
-                # also trim possible leading/trailing spaces (\u0120 in sentencepiece)
-                # sentencepiece space token usually encoded in the first byte of the token,
-                # but we leave it — downstream comparison uses the same tokenizer.
-                return cleaned
-
-            # import pdb
-            # pdb.set_trace()
-            result_indices = torch.zeros(len(batch_answer_field_id), dtype=torch.long, device=field_emb_eos_norm.device)
-
-            for i, answer_field in enumerate(batch_answer_field_id):
-                # clean and decode
-                cleaned_answer = _clean(answer_field)
-                answer_text = tokenizer.decode(cleaned_answer, skip_special_tokens=True).strip()
-
-                # 🔍 DEBUG: 打印答案提取过程
-                if i == 0:  # 只打印第一个样本，避免spam
-                    print(f"DEBUG: Raw answer tokens: {answer_field}")
-                    print(f"DEBUG: Cleaned tokens: {cleaned_answer}")
-                    print(f"DEBUG: Decoded answer_text: '{answer_text}'")
-
-                # use only the first non‑empty line & first word
-                if answer_text == "":
-                    raise ValueError("Decoded answer_text is empty — check training sample format.")
-                answer_line = answer_text.splitlines()[0].strip()
-                key = answer_line.split()[0].strip(":").lower()
-
-                if i == 0:
-                    print(f"DEBUG: First line: '{answer_line}'")
-                    print(f"DEBUG: Extracted key: '{key}'")
-                    print(f"DEBUG: Available field keys: {list(field_name_to_idx.keys())}")
-
-                if key in field_name_to_idx:
-                    result_indices[i] = field_name_to_idx[key]
-                    if i == 0:
-                        print(f"DEBUG: ✅ Matched to index {field_name_to_idx[key]} -> {field_prompt_list[field_name_to_idx[key]]}")
-                else:
-                    raise ValueError(
-                        f"Parsed answer \"{answer_line}\" (key: \"{key}\") not found in field_prompt_list; "
-                        f"raw tokens: {answer_field}"
-                    )
-            labels_emb_eos_norm = field_emb_eos_norm[result_indices]  # [B, D]
-
-            # infonce loss           
-            tau = 0.02
-            sim_metric = torch.matmul(query_emb_eos_norm, labels_emb_eos_norm.transpose(0, 1)) # BXB
-            pos_score = torch.exp(torch.diag(sim_metric) / tau) # BX1
-            # neg space is other fields           
-            my_neg = torch.matmul(query_emb_eos_norm, field_emb_eos_norm.transpose(0, 1)) # BX10
-            neg_score = torch.sum(torch.exp(my_neg / tau), dim=-1) # BX1
-            loss = -torch.mean(torch.log(pos_score / neg_score))            
-            return (loss, model_output) if return_outputs else loss
-
-    trainer = MyTrainer(
+    # 使用标准的transformers.Trainer，支持通用的交叉熵损失
+    trainer = transformers.Trainer(
         model=model,
         train_dataset=train_data,
-        # eval_dataset=val_data,
+        eval_dataset=val_data,  # 启用验证集评估
         args=transformers.TrainingArguments(
             per_device_train_batch_size=micro_batch_size,
-            # per_device_eval_batch_size=micro_batch_size,
+            per_device_eval_batch_size=micro_batch_size,  # 添加eval batch size
             gradient_accumulation_steps=gradient_accumulation_steps,
             warmup_steps=20,
             num_train_epochs=num_epochs,
             learning_rate=learning_rate,
-            bf16=True, # fp bf
+            bf16=True,
             logging_steps=10,
             optim="adamw_torch",
-            # evaluation_strategy="epoch", # evaluation_strategy="steps", eval_steps=200 
-            save_strategy="epoch", # save_strategy="steps", save_steps=200
+            evaluation_strategy="steps",  # 启用评估
+            eval_steps=100,  # 每100步评估一次
+            save_strategy="steps", 
+            save_steps=100,
             output_dir=output_dir,
-            max_steps = 150, 
-            # save_total_limit=1,
-            # load_best_model_at_end=True,
+            #max_steps=150,  # 保持原来的设置
+            save_total_limit=3,
+            load_best_model_at_end=True,  # 训练结束后加载最好的模型
             ddp_find_unused_parameters=False if ddp else None,
             group_by_length=group_by_length,
-            report_to="tensorboard", # report_to=None,
+            report_to="tensorboard",
             save_on_each_node=False,
             overwrite_output_dir=True,
         ),
         data_collator=transformers.DataCollatorForSeq2Seq(
             tokenizer, pad_to_multiple_of=8, return_tensors="pt", padding=True
         ),
-        # callbacks = [EarlyStoppingCallback(early_stopping_patience=5)]
     )
 
     trainer.train()

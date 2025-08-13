@@ -5,13 +5,13 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 accelerate launch --main_process_port=29501 train_e
     --base_model "./Llama3_Checkpoints" \
     --train_data_path '["../data/ml1m/instruction/train.json"]'  \
     --val_data_path '["../data/ml1m/instruction/valid.json"]'  \
-    --output_dir './model/ml1m/sl_1000' \
-    --batch_size 32 \
-    --micro_batch_size 1 \
-    --num_epochs 5 \
+    --output_dir './model/gift/sl_1000' \
+    --batch_size 64 \
+    --micro_batch_size 4 \
+    --num_epochs 10 \
     --learning_rate 1e-4 \
     --cutoff_len 2048 \
-    --lora_r 8 \
+    --lora_r 16 \
     --lora_alpha 16 \
     --lora_dropout 0.05 \
     --lora_target_modules '[q_proj,v_proj]' \

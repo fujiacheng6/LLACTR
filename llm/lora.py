@@ -5,11 +5,14 @@ import torch, gc, time, textwrap, re, os
 
 
 BASE_MODEL   = "./Llama3_Checkpoints"
-ADAPTER_PATH = "./model/ml1m/sl_1000"       
+ADAPTER_PATH = "./model/gift/sl_1000"       
 
-tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=True)
+tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=True, trust_remote_code=True)
 if tokenizer.pad_token is None:
-    tokenizer.add_special_tokens({"pad_token": "<pad>"})
+    if tokenizer.eos_token is not None:
+        tokenizer.pad_token = tokenizer.eos_token
+    else:
+        tokenizer.add_special_tokens({"pad_token": "<pad>"})
 tokenizer.padding_side = "left"
 VOCAB_SIZE = len(tokenizer)# 32001 after <pad>
 
@@ -45,6 +48,34 @@ TEST_CASES = [
     ("25",   "Age"),
 ]
 
+def evaluate_full_outputs(model, tag: str, max_new_tokens: int = 50) -> None:
+    """Print full prompts and full model outputs for manual inspection.
+
+    This bypasses automatic accuracy to help diagnose evaluation issues.
+    """
+    for idx, (feat, exp) in enumerate(TEST_CASES, 1):
+        prompt = build_prompt(feat)
+        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+        with torch.no_grad():
+            out = model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                do_sample=False,
+                pad_token_id=tokenizer.pad_token_id,
+                eos_token_id=tokenizer.eos_token_id,
+            )
+        full_output = tokenizer.decode(out[0], skip_special_tokens=True)
+
+        print("-" * 20, f"Case {idx}", "-" * 20)
+        print(f"Feature: '{feat}'")
+        print(f"Expected: '{exp}'")
+        print("\nPrompt:\n" + prompt)
+        print("\n==> FULL MODEL OUTPUT:\n" + full_output + "\n")
+
+        lower_out = full_output.lower()
+        detected = [f for f in FIELD_NAMES if f.lower() in lower_out]
+        print(f"Detected fields in output: {detected}\n")
+
 def evaluate(model, tag, verbose=False):
     correct = 0
     for idx, (feat, exp) in enumerate(TEST_CASES, 1):
@@ -73,12 +104,14 @@ base = AutoModelForCausalLM.from_pretrained(
     device_map="auto",
     quantization_config=bnb_cfg,
     low_cpu_mem_usage=True,
+    trust_remote_code=True,
 )
 base.resize_token_embeddings(VOCAB_SIZE)
 base.config.pad_token_id = tokenizer.pad_token_id
 base.eval()
 
-evaluate(base, "Base")
+# Print full outputs for base model instead of computing accuracy
+evaluate_full_outputs(base, "Base")
 
 # clean
 del base; gc.collect(); torch.cuda.empty_cache()
@@ -88,7 +121,8 @@ if ADAPTER_PATH and os.path.isdir(ADAPTER_PATH):
     print("Loading LoRA‑augmented model…")
     parent = AutoModelForCausalLM.from_pretrained(
         BASE_MODEL, device_map="cpu",
-        torch_dtype=torch.float16, low_cpu_mem_usage=True)
+        torch_dtype=torch.float16, low_cpu_mem_usage=True, 
+        trust_remote_code=True)
     parent.resize_token_embeddings(VOCAB_SIZE)
     parent.config.pad_token_id = tokenizer.pad_token_id
 
@@ -119,7 +153,8 @@ if ADAPTER_PATH and os.path.isdir(ADAPTER_PATH):
             break
     lora = PeftModel.from_pretrained(parent, tmp_adapter, device_map="auto")
     lora.to("cuda"); lora.eval()
-    evaluate(lora, "LoRA", verbose=True)
+    # Print full outputs for LoRA model instead of computing accuracy
+    evaluate_full_outputs(lora, "LoRA")
 
     del lora; gc.collect(); torch.cuda.empty_cache()
 else:

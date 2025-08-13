@@ -37,12 +37,31 @@ def csv_to_json(input_path, output_path, sample_data=None, sample_feature=1000):
     # instruction
     json_list = []
     for feature, field in reverse_list:
-        # instruction
-        instruction = f"Given a feature, please answer which field it belongs to. Please select the field name from the candidate set."
-        # input
+        # instruction: 添加Few-shot示例，直接教模型如何识别不同类型的特征
+        instruction = (
+            "Given a feature, please answer which field it belongs to. Please select the field name from the candidate set.\n\n"
+            "Here are some examples to guide you:\n\n"
+            "Example 1 - Movie genres (pipe-separated):\n"
+            "Input: The feature is: Action|Adventure|Thriller.\n"
+            "Response: Genres\n\n"
+            "Example 2 - Age numbers (1-99):\n"
+            "Input: The feature is: 25.\n"
+            "Response: Age\n\n"
+            "Example 3 - Gender codes:\n"
+            "Input: The feature is: M.\n"
+            "Response: Gender\n\n"
+            "Example 4 - Movie titles (with year):\n"
+            "Input: The feature is: Star Wars: Episode IV - A New Hope (1977).\n"
+            "Response: Title\n\n"
+            "Example 5 - Large numbers (could be UserID, MovieID, or Timestamp):\n"
+            "Input: The feature is: 978300760.\n"
+            "Response: Timestamp\n\n"
+            "Now solve this task:"
+        )
+        # input: 保持原有格式
         feature_input = f"The feature is: {feature}."
         candidate_set = f"The candidate set is: ['UserID', 'Gender', 'Age', 'Occupation', 'MovieID', 'Title', 'Genres', 'Timestamp']."
-        input_str = f"{feature_input}\n{candidate_set}\n"
+        input_str = f"{feature_input}\n{candidate_set}"
         # output
         target_str = f"{field}"
         # final prompt
